@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt - br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campo</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        input,
+        select {
+            padding: 5px;
+            margin-top: 10px;
+        }
+        table {
+          border: #727272;
+          height: 100px;
+          width: 1080px;
+        }
+        th {
+          width: auto;
+          height: auto;
+          color: black;
+      text-shadow: 
+               -1px -1px 0px gray, 
+               -1px 1px 0px gray,                    
+                1px -1px 0px gray,                  
+                1px 0px 0px gray;
+        }
+        tr{
+          width: auto;
+          height: auto;
+        }
+        td{
+          width: auto;
+          height: auto;
+          text-align: center;
+        }
+        input {
+          width: auto;
+          height: auto;
+          background-color: gray;
+          text-decoration: gray;
+        }
+        button {
+          width: auto;
+          height: auto;
+          text-align: center;
+        }
+    </style>
+    <script src="index.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body> 
+  <form name="MeuFormulario" id="MeuFormulario" method="get">
+  <table border="0">
+    <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Sobrenome</th>
+      <th>Data</th>
+      <th>CPF</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div id="div_nome">
+          <label for="nome"></label>
+          <input type="text" id="nome" class="Nome" /> 
+        </div></td>
+        <td><div id="div_sobrenome">
+            <label for="sobrenome"></label>
+            <input type="text" id="sobrenome" class="Sobrenome">
+        </div></td>
+        <td>
+          <div id="div_data">
+            <label for="data"></label>
+            <input type="date" id="data" class="Data" />
+          </div>
+        </td>
+        <td>
+          <div id="div_cpf">
+            <label for="cpf"></label>
+            <input id="cpf" class="CPF" type="text" onkeyup="cpfCheck(this)" maxlength="18" onkeydown="javascript: fMasc( this, mCPF );"> <span id="cpfResponse"></span>
+           <!-- <input  type="text" id="cpf" class="cpf" minlength="14" maxlength="14" placeholder="CPF"  /> -->
+           <!--<a href="#" class="animated-button1">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Button
+          </a> -->
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!--<div id="nome">
+    <label for="nome">Nome:</label>
+    <input type="text" class="nome" /> 
+  </div>
+  <div id="data">
+    <label for="data">Data:</label>
+    <input type="date" class="data" />
+  </div>
+  <div id="cpf">
+    <label for="cpf">CPF:</label>
+    <input type="text" class="cpf" />
+  </div> -->
+  <button type="button" onclick="return adicionarCampo()"  href="#" class="animated-button1">Adicionar Campo
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span></button>
+ <!-- <button type="submit" onclick="return validarFormulario()">Enviar</button> -->
+<!-- <input type="submit" value="Enviar" onsubmit="return validarFormulario()"> -->
+  <!-- <input type="submit" value="Enviar" onsubmit="return validarFormulario()" href="#" class="animated-button1"> -->
+  <button type="submit" onsubmit="return validarFormulario()" href="#" class="animated-button1">Enviar
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span></button>
+  <!--<span role="alert" id="nameError" aria-hidden="true">-->
+  </span>
+</form>
+
+</body>
+</html>
+<!--onsubmit="return validarFormulario()"-->
